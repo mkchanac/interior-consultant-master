@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1,
+  maximum-scale=5"
+    />
+
+    <link rel="icon" href="devchallenges.png" />
+
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://devchallenges.io/"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Devchallenges</title>
+    <script>
+      function showNavPage() {
+        document.getElementById("navPage").style.display = "inline";
+        document.getElementById("header").style.display = "none";
+        document.getElementById("content").style.display = "none";
+
+        console.log("inline");
+      }
+      function showHomePage() {
+        document.getElementById("navPage").style.display = "none";
+        document.getElementById("header").style.display = "flex";
+        document.getElementById("content").style.display = "flex";
+
+        console.log("inline");
+      }
+    </script>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: black;
+        color: white;
+      }
+
+      body>*{
+        padding-left: 5%;
+      }
+      #header{
+        display: flex;
+      }
+      
+      #header > * {
+        width: 50%;
+      }
+      #header > h3 {
+        width: fit-content;
+        border: solid 2px;
+        padding: 5px;
+      }
+
+      ul{
+        display:flex;
+        list-style-type: none;
+        margin-left: 30%;
+        padding-left: 5%;
+      }
+      li{
+        width: 25%;
+        padding-top: 15px;
+      }
+      li > a {
+        color: white;
+        text-decoration: none;
+      }
+      li > a:hover, li > a:active, a.current {
+        color: white;
+        text-decoration: underline 5px;
+      }
+
+      #content {
+        display: flex;
+        margin-top: 2%;
+      }
+      section{
+        width: 50%;
+        padding-right: 10%;
+        padding-top: 10%;
+      }
+      #photo > img{
+        width: 80%;
+      }
+      #block{
+        margin-left: 30%;
+        padding: 20px;
+        width: 40%;
+        margin-top: -15%;
+        position:relative;
+        z-index: 5;
+        background-color: black;
+      }
+      
+      #block>*{
+        display:inline-block;
+      }
+      #block>img{
+        width: 25%;
+        border-radius: 50px;
+      }
+      #block>div{
+        margin-left: 20px;
+        line-height: 0.8;
+        vertical-align: top;
+      }
+      div>h5{
+        color: gray;
+      }
+      #hamburger{
+        display:none;
+      }
+
+
+
+      @media (max-width: 800px) {
+        body > * {
+          font-size: 1rem;
+        }
+        #header > ul{
+          display:none;
+        }
+        #content{
+          display:flex;
+          flex-direction: column;
+        }
+        #hamburger{
+          margin-top: 20px;
+          display:flex;
+          flex-direction: column;
+        }
+        #hamburger > div{
+          width: 35px;
+          height: 5px;
+          background-color: white;
+          margin: 4px 0;
+          margin-left: 100%;
+        }
+        #block {
+          margin-left: 13%;
+          width: 50%;
+        }
+        #block > div {
+          font-size: 0.65rem;
+        }
+        #block > h2 {
+          font-size:1rem;
+        }
+        #navPage > div > ul  {
+          display: inline;
+        }
+
+        #navPage > div.list {
+          padding-top: 30%;
+        }
+        
+        #navPage > div > ul > li {
+          margin: 0 auto;
+          text-align: center;
+        }
+
+        span{
+          color: white;
+          font-size: 1.5rem;
+          float:right;
+        }
+        
+      }
+
+      #navPage {
+        display:none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h3>THIS INTERIOR</h3>
+      <ul>
+        <li><a href="" class="current">Home</a></li>
+        <li><a href="">Collection</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+      <div id="hamburger" onclick="showNavPage();">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div id="content">
+      <section>
+        <h1>Modern interior</h1>
+        <p>A full-Service residental & commercial interior design and staging company offering professional organizing & eco-services.</p>
+        <h4>Read more &#8594; </h4>
+      </section>
+      <div id="photo">
+        <img src="./photo1.png">
+        <div id="block">
+          <img src="./photo2.png">
+          <div>
+            <p>Aliza Webber</p>
+            <h5>Interior designer</h5>
+          </div>
+          <h2>Designed in 2020 by Aliza Webber</h2>
+        </div>
+      </div>
+    </div>
+    <div id="navPage">
+      <div id="cross" onclick="showHomePage()">
+        <span>&#10006;</span>
+      </div>
+      <div class="list">
+        <ul>
+          <li><a href="" class="current">Home</a></li>
+          <li><a href="">Collection</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
